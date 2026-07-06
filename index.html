@@ -323,19 +323,30 @@
       padding: 14px 16px;
       font-size: 15px;
       font-family: inherit;
-      color: #1a1a2e;
+      color: #1a1a2e !important;
+      -webkit-text-fill-color: #1a1a2e !important;
       border: 2px solid #e0e6f0;
       border-radius: 10px;
-      background: #f8f9fc;
+      background: #f8f9fc !important;
       transition: border-color .2s, box-shadow .2s;
       outline: none;
+      -webkit-appearance: none;
     }
+    .form-group input::placeholder { color: #999; -webkit-text-fill-color: #999; }
     .form-group input:focus,
     .form-group select:focus {
       border-color: #022eb4;
       box-shadow: 0 0 0 3px rgba(2,46,180,.12);
-      background: #fff;
-      color: #1a1a2e;
+      background: #fff !important;
+      color: #1a1a2e !important;
+      -webkit-text-fill-color: #1a1a2e !important;
+    }
+    /* Autofill override */
+    .form-group input:-webkit-autofill,
+    .form-group input:-webkit-autofill:focus {
+      -webkit-text-fill-color: #1a1a2e !important;
+      -webkit-box-shadow: 0 0 0 1000px #f8f9fc inset !important;
+      transition: background-color 5000s ease-in-out 0s;
     }
     .radio-group {
       display: flex;
